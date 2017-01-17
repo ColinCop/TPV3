@@ -11,6 +11,7 @@ public:
 	GlobosPG(Texturas_t img, int px, int py, juegoPG* jueg);
 	~GlobosPG();
 	
+	
 
 protected:
 	virtual void draw()const;

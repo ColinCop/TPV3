@@ -11,5 +11,6 @@ public:
 	int vida = 3;
 	int posinix, posiniy;
 	SDL_Rect* fRect = new SDL_Rect;
+	
 };
 

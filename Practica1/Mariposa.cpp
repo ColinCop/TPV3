@@ -1,4 +1,5 @@
 #include "Mariposa.h"
+#include "PlayPG.h"
 
 
 Mariposa::Mariposa(Texturas_t img, int px, int py, juegoPG* jueg)
@@ -11,7 +12,7 @@ Mariposa::Mariposa(Texturas_t img, int px, int py, juegoPG* jueg)
 	TamTot->y = px;
 	TamTot->h = 100;
 	TamTot->w = 100;
-
+	
 	fRect->w = 63;
 	fRect->h = 58;
 	fRect->x = fRect->y = 0;
@@ -51,7 +52,7 @@ bool Mariposa::onClick() {
 		vida--;
 		if (vida <= 0) {
 			vida = 3;
-			juego->newPremio(this);
+			dynamic_cast<PlayPG*>(juego->getState())->newPremio(this);
 
 		}
 		return true;

@@ -22,6 +22,7 @@ public:
 	TexturasSDL* getTextura(Texturas_t et) const { return pTexts[et]; };
 	SDL_Renderer* getRender() const { return pRender; };
 	void getMousePos(int &mpx, int & mpy) const;
+	EstadoJuego*  getState(){ return pilaEstados.top(); };
 	void initMedia();
 	void freeMedia();
 	void changeState(EstadoJuego* nEst);

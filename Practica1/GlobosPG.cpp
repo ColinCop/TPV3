@@ -1,4 +1,5 @@
 #include "GlobosPG.h"
+#include "PlayPG.h"
 
 
 GlobosPG::GlobosPG(Texturas_t img, int px, int py, juegoPG* jueg)
@@ -13,6 +14,7 @@ GlobosPG::GlobosPG(Texturas_t img, int px, int py, juegoPG* jueg)
 		visible = false;	
 	}
 	puntos = 10;
+	
 	//Inicializamos las variables
 	explotado = false;
 	//Coordenadas de los globos
@@ -43,7 +45,7 @@ void GlobosPG::update(){
 			if (TamTot->h <= 0 || 0 >= TamTot->w){//Si se ha deshinflado completamente
 				visible = false;
 				explotado = true;
-				juego->newBaja(this);
+				dynamic_cast<PlayPG*>(juego->getState())->newBaja(this);
 				
 			}
 		}
@@ -64,8 +66,8 @@ bool GlobosPG::onClick(){
 		visible = false;// El globo desaparece
 		explotado = true;// Y lo explotamos
 		juego->musica->playEffect(); //suena el efecto de sonido
-		juego->newBaja(this);
-		juego->newPuntos(this);
+		dynamic_cast<PlayPG*>(juego->getState())->newBaja(this);
+		dynamic_cast<PlayPG*>(juego->getState())->newPuntos(this);
 		return true;
 	}
 	else

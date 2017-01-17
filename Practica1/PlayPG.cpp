@@ -7,6 +7,7 @@ PlayPG::PlayPG(juegoPG* juego) :EstadoPG(juego)
 {
 	ALTO = 1080;
 	ANCHO = 720;
+
 }
 
 
@@ -55,6 +56,9 @@ void PlayPG::freeGlobos() {
 }
 bool PlayPG::gameOver() {
 	return nGlobos < 1;//Activamos el flag de salida
+}
+void PlayPG::update(){
+	
 }
 
 

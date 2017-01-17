@@ -11,5 +11,6 @@ public:
 	virtual bool onClick();
 	void reset();
 	bool visible;
+	
 };
 

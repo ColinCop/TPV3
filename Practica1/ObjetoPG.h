@@ -17,6 +17,7 @@ protected:
 	juegoPG* juego;
 	SDL_Rect* TamTot;
 	Texturas_t textura;
+	
 };
 
 #endif

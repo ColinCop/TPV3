@@ -3,6 +3,7 @@
 ObjetoPG::ObjetoPG()
 {
 	TamTot = new SDL_Rect;
+	
 }
 
 bool ObjetoPG::dentro(int x, int y) const

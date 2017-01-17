@@ -18,4 +18,5 @@ private:
 	bool gameOver();
 	bool initGlobos();
 	void freeGlobos();
+	
 };

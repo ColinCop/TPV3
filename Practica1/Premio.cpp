@@ -1,4 +1,5 @@
 #include "Premio.h"
+#include "PlayPG.h"
 
 
 Premio::Premio(Texturas_t img, int px, int py, juegoPG* jueg)
@@ -11,6 +12,7 @@ Premio::Premio(Texturas_t img, int px, int py, juegoPG* jueg)
 	TamTot->y = px;
 	TamTot->h = 100;
 	TamTot->w = 100;
+
 
 }
 
@@ -27,7 +29,7 @@ bool Premio::onClick() {
 	pmx = pmy = 0;
 	juego->getMousePos(pmx, pmy);
 	if (dentro(pmx, pmy) && visible) {
-		juego->newPuntos(this);
+		dynamic_cast<PlayPG*>(juego->getState())->newPuntos(this);
 		visible = false;
 		return true;
 	}
