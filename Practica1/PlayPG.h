@@ -11,6 +11,7 @@ public:
 	virtual void draw() const;
 	virtual void onClick();///
 	virtual void update();
+	int ALTO, ANCHO;
 private:
 	int nGlobos = 5;
 	int puntos;

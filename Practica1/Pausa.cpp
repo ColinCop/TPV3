@@ -19,5 +19,6 @@ void Pausa::resumeC(juegoPG* juego) {
 	juego->popState();
 }
 void Pausa::menuC(juegoPG* juego) {
+
 	juego->changeState(new MenuPG(juego));
 }

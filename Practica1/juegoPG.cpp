@@ -40,13 +40,14 @@ void juegoPG::run(){
 		
 		handle_event();
 		while (!exit && !gameOver()) {//Mientras no queramos salir del juego o hayamos terminado la partida
-
+			pilaEstados.top()->update();
 			if (SDL_GetTicks() - lastUpdate >= MSxUpdate){ // while(elapsed >= MSxUpdate)
 				//update();
 				lastUpdate = SDL_GetTicks();
 			}
 			handle_event();
-			//render();
+			pilaEstados.top()->draw();
+			pilaEstados.top()->onClick();
 		
 		}
 		if (exit) cout << "EXIT \n";
@@ -106,13 +107,14 @@ void juegoPG::handle_event(){
 				cout << "CLICK \n";
 				mx = e.button.x;
 				my = e.button.y;
-				onClick();
+			
 			}
 		}
 	}
 }
 void juegoPG::onExit() {
 	exit = true;//Activamos el flag de salida
+	popState();
 }
 bool juegoPG::gameOver(){
 	return nGlobos < 1;//Activamos el flag de salida

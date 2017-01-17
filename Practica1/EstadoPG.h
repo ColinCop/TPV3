@@ -8,9 +8,9 @@ class EstadoPG : public EstadoJuego
 public:
 	EstadoPG(juegoPG* juego);
 	virtual ~EstadoPG();
-	virtual void draw()const = 0;
-	virtual void update() = 0;
-	virtual void onClick() = 0;
+	virtual void draw()const ;
+	virtual void update() ;
+	virtual void onClick() ;
 protected:
 	juegoPG * juego;
 	std::vector<ObjetoJuego*> pObjetos;

@@ -36,12 +36,12 @@ public:
 	Music* musica;
 	void muestraMensaje(std::string info, std::string boton);
 	void onExit();
+	
 
 private:
-	std::stack<EstadoJuego*> pilaEstados;
+	std::stack<EstadoJuego *> pilaEstados;
 	SDL_Renderer* pRender;
 	SDL_Window* pWindow;
-	std::vector<ObjetoJuego*> pGlobos;
 	std::vector<TexturasSDL*> pTexts;
 	SDL_Rect* fondo;
 	

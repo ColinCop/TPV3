@@ -3,7 +3,7 @@
 
 GlobosPG::GlobosPG(Texturas_t img, int px, int py, juegoPG* jueg)
 {
-	textG = img;
+	textura = img;
 
 	juego = jueg;
 	if (rand() % 100 < PVIS){//Si el numero aleatorio que sacamos es menor que PVIS(70)
@@ -29,7 +29,7 @@ GlobosPG::~GlobosPG()
 }
 void GlobosPG::draw()const{
 	if (visible){
-		juego->getTextura(textura)->draw(juego->getRender(), *TamTot,nullptr);//Pintamos el globo en su posicion
+		juego->getTextura(textura)->draw(juego->getRender(), TamTot,nullptr);//Pintamos el globo en su posicion
 	}
 }
 void GlobosPG::update(){

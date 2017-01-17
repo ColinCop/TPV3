@@ -17,7 +17,6 @@ void Boton::draw()const {
 }
 
 void Boton::update() {
-		//Implementar si sobra tiempo
 		
 }
 
@@ -26,5 +25,5 @@ bool Boton::onClick() {
 	juego->getMousePos(x, y);
 	if (dentro(x, y))
 		 cb;
-	
+	return true;
 }
